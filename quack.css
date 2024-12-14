@@ -1,0 +1,129 @@
+#warning {
+    color: red;
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+#executed-well {
+    color: green;
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+body > :not(header) {
+    margin: 20px;
+}
+
+header {
+    background-color: #666666;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+header div:first-child {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+}
+
+header div span {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-right: auto;
+}
+
+header form {
+    display: flex;
+    justify-content: flex-end;
+}
+
+header form input[type="submit"] {
+    background: none;
+    border: none;
+    color: #ff7f7f;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+nav a {
+    color: grey;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #349dff;
+}
+
+nav a.active::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: blue;
+}
+
+nav {
+    margin-bottom: 10px;
+}
+
+nav a:last-child {
+    margin-bottom: 10px;
+}
+
+nav + * {
+    margin-top: 0;
+}
+
+nav img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+p {
+    background-color: #f9f9f9;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+p span {
+    color: grey;
+    font-size: 0.8em;
+    display: block;
+    margin-bottom: 2px;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 1.5em;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color:#3474ff
+}
