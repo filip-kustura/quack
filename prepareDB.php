@@ -1,18 +1,18 @@
 <?php
 
-// Manualno inicijaliziramo bazu ako vec nije.
+// Manualno inicijaliziramo bazu ako već nije.
 require_once 'db.class.php';
 
 $db = DB::getConnection();
 
-$has_tables = true;
+$has_tables = false;
 
-/*try
-{	
-	$st = $db->prepare(
+try
+{
+	$st = $db->prepare( 
 		'SHOW TABLES LIKE :tblname'
-    );
-    
+	);
+
 	$st->execute( array( 'tblname' => 'dz2_users' ) );
 	if( $st->rowCount() > 0 )
 		$has_tables = true;
@@ -27,11 +27,11 @@ $has_tables = true;
 
 }
 catch( PDOException $e ) { exit( "PDO error [show tables]: " . $e->getMessage() ); }
-*/
+
 
 if( $has_tables )
 {
-	exit( 'Tablice dz2_users / dz2_follows / dz2_quacks vec postoje. Obrisite ih pa probajte ponovno.' );
+	exit( 'Tablice dz2_users / dz2_follows / dz2_quacks već postoje. Obrišite ih pa probajte ponovno.' );
 }
 
 
@@ -100,7 +100,7 @@ catch( PDOException $e ) { exit( "PDO error [insert dz2_users]: " . $e->getMessa
 echo "Ubacio u tablicu dz2_users.<br />";
 
 
-// Ubaci neke followere unutra (ovo nije bas pametno ovako raditi, preko hardcodiranih id-eva usera)
+// Ubaci neke followere unutra (ovo nije baš pametno ovako raditi, preko hardcodiranih id-eva usera)
 try
 {
 	$st = $db->prepare( 'INSERT INTO dz2_follows(id_user, id_followed_user) VALUES (:id1, :id2)' );
@@ -116,7 +116,7 @@ catch( PDOException $e ) { exit( "PDO error [dz2_follows]: " . $e->getMessage() 
 echo "Ubacio u tablicu dz2_follows.<br />";
 
 
-// Ubaci neke quackove unutra (ovo nije bas pametno ovako raditi, preko hardcodiranih id-eva usera)
+// Ubaci neke quackove unutra (ovo nije baš pametno ovako raditi, preko hardcodiranih id-eva usera)
 try
 {
 	$st = $db->prepare( 'INSERT INTO dz2_quacks(id_user, quack, date) VALUES (:id_user, :quack, :date)' );
