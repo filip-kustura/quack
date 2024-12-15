@@ -2,7 +2,7 @@
 
 # Quack: A Simple Social Media Web Application
 
-This repository contains a PHP-based web application implementing the "Quack" platform, designed as a university assignment for the "Računarski praktikum 2" course. Quack is a lightweight social media application that allows users to share short posts, follow others, and explore tagged content.
+This repository contains a PHP-based web application implementing the "Quack" platform, designed as a university assignment for the "Computer Lab II" course. Quack is a lightweight social media application that allows users to share short posts, follow others, and explore tagged content.
 
 ## Features
 
